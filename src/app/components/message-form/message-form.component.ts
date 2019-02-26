@@ -24,7 +24,7 @@ export class MessageFormComponent implements OnInit {
     this.message.timestamp = new Date();
     this.messages.push(this.message);
 
-    this.dialogFlowService.getResponse(this.message.content).subscribe(res => {
+    this.dialogFlowService.getResponse(this.message.content).subscribe((res: any) => {
       this.messages.push(
         new Message(res.result.fulfillment.speech, 'assets/images/bot.png', res.timestamp)
       );
